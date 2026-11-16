@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agbata David (Davelins Edits) — Editor & Web Developer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f5f3ff',
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                            900: '#4c1d95',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: rgba(139, 92, 246, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -15px rgba(139, 92, 246, 0.15);
+        }
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 selection:bg-purple-500 selection:text-white min-h-screen relative overflow-x-hidden bg-grid-pattern">
+
+    <!-- Ambient Animated Background Glow Effects -->
+    <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-purple-600/15 rounded-full blur-[120px] pointer-events-none animate-pulse-slow"></div>
+    <div class="absolute top-1/2 right-10 w-[500px] h-[500px] bg-indigo-600/15 rounded-full blur-[120px] pointer-events-none animate-pulse-slow"></div>
+    <div class="absolute bottom-1/4 left-10 w-[400px] h-[400px] bg-pink-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-card border-b border-white/10 px-6 py-4 transition-all duration-300">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
+            <a href="#" class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent hover:scale-105 transition-transform">
+                AGBATA.DEV
+            </a>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+                <a href="#about" class="hover:text-purple-400 transition-colors">About</a>
+                <a href="#davelins-edits" class="hover:text-purple-400 transition-colors">Davelins Edits</a>
+                <a href="#tiktok-showcase" class="hover:text-purple-400 transition-colors">TikTok Feed</a>
+                <a href="#projects" class="hover:text-purple-400 transition-colors">Web Dev Work</a>
+                <a href="#skills" class="hover:text-purple-400 transition-colors">Skills</a>
+                <a href="#contact" class="px-4 py-2 rounded-full bg-purple-600 text-white font-semibold hover:bg-purple-500 transition-all shadow-lg shadow-purple-500/25 hover:scale-105">Let's Talk</a>
+            </div>
+            <!-- Mobile Menu Toggle Button -->
+            <button id="menu-btn" class="md:hidden text-slate-300 focus:outline-none">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden pt-4 pb-2 space-y-3 px-2 border-t border-white/10 mt-3">
+            <a href="#about" class="block text-slate-300 hover:text-purple-400">About</a>
+            <a href="#davelins-edits" class="block text-slate-300 hover:text-purple-400">Davelins Edits</a>
+            <a href="#tiktok-showcase" class="block text-slate-300 hover:text-purple-400">TikTok Feed</a>
+            <a href="#projects" class="block text-slate-300 hover:text-purple-400">Web Dev Work</a>
+            <a href="#skills" class="block text-slate-300 hover:text-purple-400">Skills</a>
+            <a href="#contact" class="block text-purple-400 font-semibold">Let's Talk</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-20 md:pt-44 md:pb-32 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 z-10">
+        <div class="flex-1 text-center md:text-left space-y-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-card text-purple-400 text-xs font-semibold uppercase tracking-wider animate-bounce">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Available for New Projects & Editing Gigs
+            </div>
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
+                Hi, I'm <span class="bg-gradient-to-r from-purple-400 via-indigo-400 to-pink-500 bg-clip-text text-transparent">Agbata David</span>.
+            </h1>
+            <p class="text-slate-300 text-xl font-medium">
+                Professional Editor, Programmer, & Web Developer.
+            </p>
+            <p class="text-slate-400 text-base max-w-xl mx-auto md:mx-0">
+                Creator of <span class="text-purple-400 font-semibold">Davelins Edits</span>. Free for any kind of professional editing, writing clean code, and building high-performance web applications.
+            </p>
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-4">
+                <a href="#davelins-edits" class="px-8 py-3.5 rounded-xl bg-purple-600 text-white font-semibold hover:bg-purple-500 transition-all shadow-xl shadow-purple-600/30 flex items-center gap-2 hover:scale-105">
+                    Explore Davelins Edits <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+                <a href="#contact" class="px-8 py-3.5 rounded-xl glass-card text-slate-200 font-semibold hover:bg-white/10 transition-all hover:scale-105">
+                    Contact Me
+                </a>
+            </div>
+        </div>
+        <div class="relative w-72 h-72 sm:w-96 sm:h-96 flex items-center justify-center animate-float">
+            <div class="absolute inset-0 bg-gradient-to-tr from-purple-600 to-pink-600 rounded-3xl blur-3xl opacity-40"></div>
+            <div class="relative w-full h-full glass-card rounded-3xl overflow-hidden border border-white/10 p-2 flex items-center justify-center shadow-2xl">
+                <img src="images/my-portrait.png" alt="Profile Image" class="w-full h-full object-cover rounded-2xl hover:grayscale-0 transition-all duration-700 hover:scale-105">
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="relative py-20 px-6 max-w-6xl mx-auto z-10">
+        <div class="glass-card rounded-3xl p-8 md:p-12 border border-white/10 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div class="space-y-4">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-purple-400">About Me</h2>
+                <h3 class="text-2xl sm:text-3xl font-bold">Bridging Creative Storytelling & Modern Code.</h3>
+                <p class="text-slate-300 leading-relaxed">
+                    I'm Agbata David, a multidisciplinary creator who thrives at the intersection of media arts and software engineering. Whether I am meticulously editing video and textual content under my brand <span class="text-purple-400 font-semibold">Davelins Edits</span> or architecting robust web apps, my goal is always uncompromising quality.
+                </p>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    With an acute attention to detail acquired through professional editing, I write clean, efficient code that ensures seamless user experiences.
+                </p>
+            </div>
+            <div class="relative h-72 sm:h-80 rounded-2xl overflow-hidden border border-white/10 group shadow-xl">
+                <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&q=80&w=800" alt="Davelins " class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-6">
+                    <span class="text-xs font-semibold text-purple-300 bg-purple-950/80 px-3 py-1 rounded-full border border-purple-500/30 backdrop-blur-md">Multi-Disciplinary Creator</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DAVELINS EDITS SECTION -->
+    <section id="davelins-edits" class="relative py-28 px-6 max-w-6xl mx-auto z-10">
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <span class="px-3 py-1 rounded-full glass-card text-purple-400 text-xs font-bold uppercase tracking-widest border border-purple-500/30">
+                Featured Brand Showcase
+            </span>
+            <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-white via-slate-200 to-purple-300 bg-clip-text text-transparent">
+                Davelins Edits
+            </h2>
+            <p class="text-slate-400 text-base sm:text-lg">
+                The official hub for all my high-end editing productions, creative styling, visual effects storytelling, and social media content creation.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+            <!-- Feature Card 1 -->
+            <div class="glass-card rounded-3xl p-8 border border-white/10 space-y-4 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-purple-600/20 border border-purple-500/30 flex items-center justify-center text-purple-400 text-xl mb-6">
+                        <i class="fa-solid fa-video"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Video & Reel Editing</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Crafting fast-paced, engaging short-form and long-form videos tailored for TikTok, Instagram Reels, and YouTube. Specialized in dynamic cuts, sound design, color grading, and modern captioning.
+                    </p>
+                </div>
+                <div class="pt-4 border-t border-white/5 flex items-center justify-between text-xs text-purple-300 font-semibold">
+                    <span>TikTok Trend Optimized</span>
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+            </div>
+
+            <!-- Feature Card 2 -->
+            <div class="glass-card rounded-3xl p-8 border border-white/10 space-y-4 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-indigo-400 text-xl mb-6">
+                        <i class="fa-solid fa-pen-fancy"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Content & Copy Editing</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Polishing articles, scripts, essays, and digital copy to perfection. Ensuring tone consistency, immaculate grammar, clarity, and punchy narrative flow that captivates audiences instantly.
+                    </p>
+                </div>
+                <div class="pt-4 border-t border-white/5 flex items-center justify-between text-xs text-indigo-300 font-semibold">
+                    <span>Zero Errors Guaranteed</span>
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+            </div>
+
+            <!-- Feature Card 3 -->
+            <div class="glass-card rounded-3xl p-8 border border-white/10 space-y-4 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-pink-600/20 border border-pink-500/30 flex items-center justify-center text-pink-400 text-xl mb-6">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Visual Styling & FX</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Applying state-of-the-art filters, aesthetic transitions, and cinematic motion graphics that elevate ordinary footage into viral, eye-catching masterpieces.
+                    </p>
+                </div>
+                <div class="pt-4 border-t border-white/5 flex items-center justify-between text-xs text-pink-300 font-semibold">
+                    <span>Cinematic Standards</span>
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIKTOK FEED SHOWCASE (@davelinsedits) -->
+    <section id="tiktok-showcase" class="relative py-20 px-6 max-w-6xl mx-auto z-10">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+            <div>
+                <span class="text-xs font-bold uppercase tracking-widest text-purple-400 mb-2 block">Official TikTok Feed</span>
+                <h3 class="text-3xl sm:text-4xl font-extrabold">@davelinsedits on TikTok</h3>
+            </div>
+            <a href="https://www.tiktok.com/@davelinsedits" target="_blank" class="inline-flex items-center gap-2 text-sm font-semibold text-purple-400 hover:text-purple-300 transition-colors">
+                <i class="fa-brands fa-tiktok"></i> Visit @davelinsedits TikTok Profile <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- TikTok Video 1 -->
+            <div class="glass-card rounded-3xl overflow-hidden border border-white/10 group p-4 flex flex-col justify-between">
+                <div class="relative rounded-2xl overflow-hidden bg-slate-900 aspect-[9/16] mb-4 flex items-center justify-center">
+                    <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&q=80&w=600" alt="Davelins Edits TikTok 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <a href="https://www.tiktok.com/@davelinsedits" target="_blank" class="w-12 h-12 rounded-full bg-purple-600 text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-play ml-0.5"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex items-center justify-between text-xs text-purple-400 font-semibold">
+                        <span>@davelinsedits</span>
+                        <span><i class="fa-solid fa-heart text-pink-500 mr-1"></i> Viral</span>
+                    </div>
+                    <h4 class="font-bold text-base text-slate-100">Velocity & Smooth Transitions Edit</h4>
+                    <p class="text-slate-400 text-xs line-clamp-2">Custom color-graded masterpiece showcasing high-impact editing techniques.</p>
+                </div>
+            </div>
+
+            <!-- TikTok Video 2 -->
+            <div class="glass-card rounded-3xl overflow-hidden border border-white/10 group p-4 flex flex-col justify-between">
+                <div class="relative rounded-2xl overflow-hidden bg-slate-900 aspect-[9/16] mb-4 flex items-center justify-center">
+                    <img src="https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&q=80&w=600" alt="Davelins Edits TikTok 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <a href="https://www.tiktok.com/@davelinsedits" target="_blank" class="w-12 h-12 rounded-full bg-purple-600 text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-play ml-0.5"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex items-center justify-between text-xs text-purple-400 font-semibold">
+                        <span>@davelinsedits</span>
+                        <span><i class="fa-solid fa-heart text-pink-500 mr-1"></i> Trending</span>
+                    </div>
+                    <h4 class="font-bold text-base text-slate-100">Cinematic Storytelling Cut</h4>
+                    <p class="text-slate-400 text-xs line-clamp-2">Engaging rhythm and audio sync designed for maximum audience retention.</p>
+                </div>
+            </div>
+
+            <!-- TikTok Video 3 -->
+            <div class="glass-card rounded-3xl overflow-hidden border border-white/10 group p-4 flex flex-col justify-between">
+                <div class="relative rounded-2xl overflow-hidden bg-slate-900 aspect-[9/16] mb-4 flex items-center justify-center">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=600" alt="Davelins Edits TikTok 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <a href="https://www.tiktok.com/@davelinsedits" target="_blank" class="w-12 h-12 rounded-full bg-purple-600 text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-play ml-0.5"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex items-center justify-between text-xs text-purple-400 font-semibold">
+                        <span>@davelinsedits</span>
+                        <span><i class="fa-solid fa-heart text-pink-500 mr-1"></i> Featured</span>
+                    </div>
+                    <h4 class="font-bold text-base text-slate-100">Advanced Visual Effects Breakdown</h4>
+                    <p class="text-slate-400 text-xs line-clamp-2">Behind-the-scenes editing timeline process and styling wizardry.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section (Web Dev) -->
+    <section id="projects" class="relative py-20 px-6 max-w-6xl mx-auto z-10">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+            <div>
+                <h2 class="text-xs font-bold uppercase tracking-widest text-purple-400 mb-2">Portfolio</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold">Web Development Works</h3>
+            </div>
+            <p class="text-slate-400 max-w-sm text-sm">A selection of recent web applications, UI layouts, and technical projects.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Project 1 -->
+            <div class="glass-card rounded-3xl overflow-hidden border border-white/10 group">
+                <div class="h-60 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=800" alt="Project 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="p-8 space-y-4">
+                    <div class="flex items-center gap-2 text-xs font-semibold text-purple-400">
+                        <span>React</span> &bull; <span>Tailwind</span> &bull; <span>Node.js</span>
+                    </div>
+                    <h4 class="text-xl font-bold">CyberPulse Analytics</h4>
+                    <p class="text-slate-400 text-sm">An interactive data visualization dashboard built for tracking decentralized crypto liquidity metrics in real time.</p>
+                    <div class="flex items-center gap-4 pt-2">
+                        <a href="#" class="text-sm font-semibold text-purple-400 hover:text-purple-300 flex items-center gap-1">Live Demo <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+                        <a href="#" class="text-sm font-semibold text-slate-400 hover:text-white flex items-center gap-1">GitHub <i class="fa-brands fa-github text-xs"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="glass-card rounded-3xl overflow-hidden border border-white/10 group">
+                <div class="h-60 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800" alt="Project 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                </div>
+                <div class="p-8 space-y-4">
+                    <div class="flex items-center gap-2 text-xs font-semibold text-purple-400">
+                        <span>Next.js</span> &bull; <span>TypeScript</span> &bull; <span>Tailwind</span>
+                    </div>
+                    <h4 class="text-xl font-bold">Nova Studio App</h4>
+                    <p class="text-slate-400 text-sm">A lightweight cloud-based workspace designed for remote design teams to review assets synchronously.</p>
+                    <div class="flex items-center gap-4 pt-2">
+                        <a href="#" class="text-sm font-semibold text-purple-400 hover:text-purple-300 flex items-center gap-1">Live Demo <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+                        <a href="#" class="text-sm font-semibold text-slate-400 hover:text-white flex items-center gap-1">GitHub <i class="fa-brands fa-github text-xs"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="relative py-20 px-6 max-w-6xl mx-auto z-10">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-purple-400 mb-2">Expertise</h2>
+        <h3 class="text-3xl sm:text-4xl font-extrabold mb-12">Skills & Services</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            <div class="glass-card p-6 rounded-2xl flex items-center gap-4 border border-white/10">
+                <i class="fa-solid fa-pen-nib text-3xl text-purple-400"></i>
+                <span class="font-semibold">Professional Editing</span>
+            </div>
+            <div class="glass-card p-6 rounded-2xl flex items-center gap-4 border border-white/10">
+                <i class="fa-brands fa-tiktok text-3xl text-pink-400"></i>
+                <span class="font-semibold">Davelins Edits</span>
+            </div>
+            <div class="glass-card p-6 rounded-2xl flex items-center gap-4 border border-white/10">
+                <i class="fa-brands fa-html5 text-3xl text-orange-500"></i>
+                <span class="font-semibold">HTML5 / CSS3</span>
+            </div>
+            <div class="glass-card p-6 rounded-2xl flex items-center gap-4 border border-white/10">
+                <i class="fa-brands fa-js text-3xl text-yellow-400"></i>
+                <span class="font-semibold">JavaScript (ES6+)</span>
+            </div>
+            <div class="glass-card p-6 rounded-2xl flex items-center gap-4 border border-white/10">
+                <i class="fa-brands fa-react text-3xl text-cyan-400"></i>
+                <span class="font-semibold">React.js</span>
+            </div>
+            <div class="glass-card p-6 rounded-2xl flex items-center gap-4 border border-white/10">
+                <i class="fa-solid fa-wind text-3xl text-teal-400"></i>
+                <span class="font-semibold">Tailwind CSS</span>
+            </div>
+            <div class="glass-card p-6 rounded-2xl flex items-center gap-4 border border-white/10">
+                <i class="fa-brands fa-node text-3xl text-emerald-500"></i>
+                <span class="font-semibold">Node.js</span>
+            </div>
+            <div class="glass-card p-6 rounded-2xl flex items-center gap-4 border border-white/10">
+                <i class="fa-solid fa-code text-3xl text-blue-400"></i>
+                <span class="font-semibold">Programming</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="relative py-20 px-6 max-w-4xl mx-auto z-10">
+        <div class="glass-card rounded-3xl p-8 md:p-12 border border-white/10 text-center space-y-6 shadow-2xl">
+            <h2 class="text-xs font-bold uppercase tracking-widest text-purple-400">Get In Touch</h2>
+            <h3 class="text-3xl sm:text-4xl font-extrabold">Let's work together.</h3>
+            <p class="text-slate-400 max-w-md mx-auto text-sm">
+                Need an editor for your content, a video edited via Davelins Edits, or a programmer/web developer for your project? Reach out directly!
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                <a href="tel:09041939644" class="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-purple-600 text-white font-semibold hover:bg-purple-500 transition-all shadow-xl shadow-purple-600/30 hover:scale-105">
+                    <i class="fa-solid fa-phone"></i> Call: 09041939644
+                </a>
+                <a href="https://wa.me/2349041939644" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 rounded-xl glass-card text-slate-200 font-semibold hover:bg-white/10 transition-all hover:scale-105">
+                    <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i> WhatsApp Me
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative py-8 px-6 border-t border-white/10 text-center text-slate-500 text-sm max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 z-10">
+        <p>&copy; 2026 Agbata David (Davelins Edits). All rights reserved.</p>
+        <div class="flex items-center space-x-6 text-lg">
+            <a href="https://www.tiktok.com/@davelinsedits" target="_blank" class="hover:text-purple-400 transition-colors" title="TikTok: @davelinsedits"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="#" class="hover:text-purple-400 transition-colors"><i class="fa-brands fa-github"></i></a>
+            <a href="#" class="hover:text-purple-400 transition-colors"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="hover:text-purple-400 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+    </footer>
+
+    <!-- AI Video Creator & Assistant Floating Widget -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <!-- Chat & Video Generator Toggle Button -->
+        <button id="ai-chat-btn" class="w-14 h-14 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white flex items-center justify-center shadow-2xl shadow-purple-600/50 hover:scale-110 transition-transform duration-300 focus:outline-none group relative" title="Open AI Video Creator">
+            <i class="fa-solid fa-wand-magic-sparkles text-xl group-hover:rotate-12 transition-transform"></i>
+            <span class="absolute -top-1 -right-1 w-4 h-4 bg-emerald-400 rounded-full border-2 border-slate-950 animate-ping"></span>
+        </button>
+
+        <!-- AI Window Modal -->
+        <div id="ai-chat-modal" class="hidden absolute bottom-20 right-0 w-80 sm:w-96 glass-card rounded-3xl border border-white/20 shadow-2xl overflow-hidden flex flex-col h-[520px] bg-slate-900/95 backdrop-blur-2xl">
+            <!-- Header -->
+            <div class="p-4 border-b border-white/10 flex items-center justify-between bg-purple-950/50">
+                <div class="flex items-center gap-3">
+                    <div class="w-3 h-3 rounded-full bg-emerald-400 animate-pulse"></div>
+                    <div>
+                        <h4 class="font-bold text-sm text-white flex items-center gap-1.5">
+                            Davelins AI Studio <span class="text-[10px] bg-purple-600 px-1.5 py-0.5 rounded text-white font-mono">PRO</span>
+                        </h4>
+                        <p class="text-xs text-purple-300">Create videos & ask about David's edits</p>
+                    </div>
+                </div>
+                <button id="ai-close-btn" class="text-slate-400 hover:text-white transition-colors">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Messages Area -->
+            <div id="ai-chat-messages" class="flex-1 p-4 overflow-y-auto space-y-3 text-sm">
+                <div class="flex gap-2 items-start">
+                    <div class="w-7 h-7 rounded-full bg-purple-600 flex items-center justify-center text-white text-xs shrink-0 font-bold">AI</div>
+                    <div class="glass-card p-3 rounded-2xl rounded-tl-none bg-white/5 border border-white/10 text-slate-200">
+                        Hey there! I am David's AI video assistant. Want me to generate a TikTok video concept, simulate a velocity edit, or check pricing for <strong>Davelins Edits</strong>? Type your request below! 🎬✨
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Action Buttons for Video Creation -->
+            <div class="px-4 py-2 flex gap-2 overflow-x-auto border-t border-white/5 no-scrollbar text-xs bg-slate-950/30">
+                <button class="ai-quick-btn px-3 py-1.5 rounded-full bg-purple-600/30 text-purple-300 border border-purple-500/40 whitespace-nowrap hover:bg-purple-600/50 transition-colors" data-prompt="Generate a viral TikTok velocity edit preview">🎥 Create TikTok Video</button>
+                <button class="ai-quick-btn px-3 py-1.5 rounded-full bg-indigo-600/30 text-indigo-300 border border-indigo-500/40 whitespace-nowrap hover:bg-indigo-600/50 transition-colors" data-prompt="What are David's editing rates?">💰 Editing Rates</button>
+            </div>
+
+            <!-- Input Form -->
+            <form id="ai-chat-form" class="p-3 border-t border-white/10 flex items-center gap-2 bg-slate-950/80">
+                <input type="text" id="ai-chat-input" placeholder="Type prompt or video request..." class="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-purple-500 transition-colors">
+                <button type="submit" class="w-10 h-10 rounded-xl bg-purple-600 text-white flex items-center justify-center hover:bg-purple-500 transition-colors shrink-0 shadow-lg shadow-purple-600/30">
+                    <i class="fa-solid fa-paper-plane text-xs"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript & AI Video Generator Logic -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if(menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // AI Chat & Video Creator Modal Toggle
+        const chatBtn = document.getElementById('ai-chat-btn');
+        const chatModal = document.getElementById('ai-chat-modal');
+        const closeBtn = document.getElementById('ai-close-btn');
+        if(chatBtn && chatModal) {
+            chatBtn.addEventListener('click', () => {
+                chatModal.classList.toggle('hidden');
+            });
+        }
+        if(closeBtn && chatModal) {
+            closeBtn.addEventListener('click', () => {
+                chatModal.classList.add('hidden');
+            });
+        }
+
+        // AI Chat & Video Generation Simulation Logic
+        const chatForm = document.getElementById('ai-chat-form');
+        const chatInput = document.getElementById('ai-chat-input');
+        const chatMessages = document.getElementById('ai-chat-messages');
+        const quickBtns = document.querySelectorAll('.ai-quick-btn');
+
+        function appendMessage(sender, text, isHtml = false) {
+            const div = document.createElement('div');
+            if(sender === 'user') {
+                div.className = 'flex gap-2 items-start justify-end';
+                div.innerHTML = `
+                    <div class="glass-card p-3 rounded-2xl rounded-tr-none bg-purple-600/20 border border-purple-500/30 text-slate-100 max-w-[80%] text-xs">
+                        ${text}
+                    </div>
+                    <div class="w-7 h-7 rounded-full bg-indigo-600 flex items-center justify-center text-white text-xs shrink-0 font-bold">You</div>
+                `;
+            } else {
+                div.className = 'flex gap-2 items-start';
+                div.innerHTML = `
+                    <div class="w-7 h-7 rounded-full bg-purple-600 flex items-center justify-center text-white text-xs shrink-0 font-bold">AI</div>
+                    <div class="glass-card p-3 rounded-2xl rounded-tl-none bg-white/5 border border-white/10 text-slate-200 max-w-[85%] text-xs leading-relaxed">
+                        ${isHtml ? text : text.replace(/\n/g, '<br>')}
+                    </div>
+                `;
+            }
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function handleUserQuery(query) {
+            if(!query.trim()) return;
+            appendMessage('user', query);
+            chatInput.value = '';
+
+            // Simulate AI thinking and response / video generation
+            setTimeout(() => {
+                const lower = query.toLowerCase();
+                if(lower.includes('video') || lower.includes('tiktok') || lower.includes('create') || lower.includes('edit')) {
+                    const videoResponse = `
+                        🎬 <strong>Davelins AI Video Studio Output:</strong><br>
+                        Generated custom short-form video concept tailored for <a href="https://www.tiktok.com/@davelinsedits" target="_blank" class="text-purple-400 underline font-semibold">@davelinsedits</a>!<br><br>
+                        <div class="mt-2 p-2 rounded-xl bg-slate-950/80 border border-purple-500/30 flex items-center gap-3">
+                            <div class="w-12 h-16 rounded bg-purple-900/50 flex items-center justify-center text-purple-400 text-base shrink-0"><i class="fa-solid fa-play"></i></div>
+                            <div>
+                                <p class="font-bold text-white text-xs">Velocity_Transition_v4.mp4</p>
+                                <p class="text-[10px] text-slate-400">1080x1920 &bull; 60FPS &bull; 9:16 TikTok Format</p>
+                            </div>
+                        </div>
+                        <p class="mt-2 text-[11px] text-slate-300">Ready for export or direct booking with David via WhatsApp!</p>
+                    `;
+                    appendMessage('ai', videoResponse, true);
+                } else if(lower.includes('rate') || lower.includes('hire') || lower.includes('price')) {
+                    appendMessage('ai', "David offers flexible rates for Davelins Edits and web dev projects depending on complexity. You can reach out directly via WhatsApp at <strong>09041939644</strong> or click 'WhatsApp Me' at the bottom of the page!");
+                } else {
+                    appendMessage('ai', `I can help you create video concepts, explore <strong>Davelins Edits</strong> services (@davelinsedits), or contact Agbata David. Try clicking the "🎥 Create TikTok Video" button above!`);
+                }
+            }, 600);
+        }
+
+        chatForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            handleUserQuery(chatInput.value);
+        });
+
+        quickBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                handleUserQuery(btn.getAttribute('data-prompt'));
+            });
+        });
+    </script>
+</body>
+</html>zx 
